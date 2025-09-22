@@ -35,7 +35,7 @@ Se hace un analisis estadistico del comportamiento de las varibles 'mount_trans_
  
 ### **Paso 3: Definir el modelo analítico.**
  
-1. A partir de la base de conocimiento df_fraccio_fn, se aplica tecnicas no supervisadas de detección de anomalias como:
+1. A partir de la base de conocimiento df_fraccio_fn, se planteo aplicar técnicas no supervisadas de detección de anomalias como:
 
 * Isolation Forest
 * Cluster based anomaly detection (K-mean)
@@ -44,7 +44,7 @@ Se hace un analisis estadistico del comportamiento de las varibles 'mount_trans_
 * One class SVM
 * RNN (comparison between prediction and reality). 
 
-para identificar el umbra de a partir de que 'mount_trans_24_hrs' y 'cant_trans_24_hrs' se considera una anomalia por Fraccionamiento.
+Para darle solución al objetivo se aplico la tecnica no supervisada de **Isolation Forest** para identificar el umbra de a partir de que 'mount_trans_24_hrs' y 'cant_trans_24_hrs' se considera una anomalia por Fraccionamiento.
 
 2. Proponga con qué frecuencia deben actualizarse los datos y por qué.
 
@@ -71,4 +71,6 @@ Puedes exportar el resultado o integrarlo en un dashboard, API, o proceso batch.
 
 ### conclusiones:
 
-* 
+* Se crea base de conocimiento df_fraccio_fn, donde se crean variables como 'mount_trans_24_hrs','cant_trans_24_hrs' que concentran el fraccionamiento de las transacciones en una ventana de 24 horas.
+
+* Aplicando Metodos de Detección de Anomalias como IsolationForest y una contamination = 0.01, se Identifica las transacciones fracturadas en una ventana de tiempo de 24 horas inusuales, donde se ve un perfil inusual y se define unos umbrales para considerar la transacciones fraccionada en una ventana de tiempo de 24 horas, cantidad de transacciones mayores o iguales a 6 y un monto total mayor o igual a $2185.6.
